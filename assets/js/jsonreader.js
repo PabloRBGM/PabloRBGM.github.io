@@ -9,25 +9,28 @@
     
     let $window = $(window)
     
-   // $window.on('load', change_lan($, 'en'))
+    $window.on('load', change_lan($, 'en'))
+
+    /*$('#my_photo').mousedown(function(event) {
+        switch (event.which) {
+            case 1:
+                change_lan($, 'en')
+                break;
+            case 2:
+                change_lan($, 'spa')
+                break;
+        }
+    });*/
     
 })(jQuery);
 
-function load_JSONlan(jQ){
-    
-}
-
-
 function change_lan(jQ, lan){
-    var languages = {}
     jQ.getJSON('assets/js/languages.json', function(languages) {       
        sel_lan = languages[lan]
        jQ('#nav_about_me').text(sel_lan.nav_about_me)
        jQ.each(sel_lan, function(key, value){
             jQ(`#${key}`).text(value)
        })
-
-       //jQ("#pr0_repoLink").text("hi")
     });
     //failure check  
 }
