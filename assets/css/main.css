@@ -171,6 +171,10 @@ input, select, textarea {
 		line-height: 1.5em;
 	}
 
+	p {
+		white-space: pre-line;
+	}
+	
 	sub {
 		font-size: 0.8em;
 		position: relative;
